@@ -27,7 +27,6 @@ Prem's confidential computing AI infrastructure — end-to-end encrypted inferen
 |-----------|-------------|
 | `api-sdk` | Full `@premai/api-sdk` SDK reference — chat, vision, audio, files, tools, DEK store, proxy |
 | `prem-docs` | Official Prem documentation links — quickstart, API keys, billing, errors, rate limits, architecture |
-| `prem-docs-mcp` | Prem Docs MCP server — search and query Prem docs from an AI agent via Model Context Protocol |
 | `reticle` | `@premai/reticle` hardware attestation SDK — AMD SEV-SNP, Intel TDX, NVIDIA GPU verification |
 | `reticle-expo` | React Native / Expo attestation integration — BareKit worklet, dual-engine architecture |
 
