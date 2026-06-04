@@ -1,5 +1,5 @@
 ---
-name: prem-docs
+name: api-docs
 description: Official Prem documentation. Use when onboarding to Prem, understanding the platform architecture, managing API keys, handling errors/rate limits, billing, or looking up raw API reference endpoints. Triggers on Confidential API docs, quickstart, API keys, billing, rate limits, attestation, security model, enclave architecture, Prem platform, prem.io, prem labs, prem, prem ai.
 ---
 

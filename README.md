@@ -4,58 +4,66 @@ A collection of skills for AI coding agents. Skills are packaged instructions an
 
 Skills follow the [Agent Skills](https://agentskills.io/) format.
 
-## Available Skills
-
-### ecosystem
-
-Prem's confidential computing AI infrastructure — end-to-end encrypted inference via hardware-attested enclaves (AMD SEV-SNP, Intel TDX, NVIDIA Hopper/Blackwell) with post-quantum cryptography (XWing: ML-KEM768 + X25519). All data is encrypted client-side before leaving the device.
-
-**Use when:**
-
-- Calling LLMs via the Prem confidential AI gateway
-- Transcribing or translating audio with privacy guarantees
-- Uploading, indexing, or querying encrypted files
-- Running AI tools: image generation, PDF parsing, web search, RAG
-- Setting up a local OpenAI-compatible proxy with transparent encryption
-- Managing cryptographic keys (KEK/DEK) in browser or server environments
-- Verifying enclave integrity via hardware attestation (AMD SEV-SNP, Intel TDX, NVIDIA GPU)
-- Implementing attestation in React Native / Expo apps
-
-**References included:**
-
-| Reference | Description |
-|-----------|-------------|
-| `api-sdk` | Full `@premai/api-sdk` SDK reference — chat, vision, audio, files, tools, DEK store, proxy |
-| `prem-docs` | Official Prem documentation links — quickstart, API keys, billing, errors, rate limits, architecture |
-| `reticle` | `@premai/reticle` hardware attestation SDK — AMD SEV-SNP, Intel TDX, NVIDIA GPU verification |
-| `reticle-expo` | React Native / Expo attestation integration — BareKit worklet, dual-engine architecture |
-
 ## Installation
 
 ```bash
 npx skills add prem-research/api-skills
 ```
 
-## Usage
+## Available Skills
 
-Skills are automatically available once installed. The agent will use them when relevant tasks are detected.
+### api-ecosystem
 
-**Examples:**
+Prem's confidential computing AI infrastructure overview — end-to-end encrypted inference via hardware-attested enclaves (AMD SEV-SNP, Intel TDX, NVIDIA Hopper/Blackwell) with post-quantum cryptography (XWing: ML-KEM768 + X25519).
 
-- Set up the SDK in my Next.js app
-- Add streaming chat completions with encryption
-- Help me transcribe audio using the Prem Confidential API
-- Generate a new CLIENT_KEK for my project
-- Verify enclave attestation before sending data
-- Implement attestation in my Expo app
+**Triggers on:** Prem, premai, prem.io, confidential AI, encrypted inference, enclave, attestation, KEK, DEK, XWing, post-quantum, confidential-proxy.
+
+---
+
+### api-sdk
+
+TypeScript SDK for encrypted AI inference (`@premai/api-sdk`). Covers initialization with React caching, streaming chat, vision, audio transcription/translation, live STT, file operations, tools, models, and error handling.
+
+**Triggers on:** `createRvencClient`, `@premai/api-sdk`, `RvencClient`, `DEKStore`, encrypted inference.
+
+**Includes:**
+- `references/streaming-patterns.md` — streaming chat/vision/audio and live STT patterns
+- `references/kek-management.md` — KEK localStorage lifecycle, PIN-based backup/restore
+- `scripts/` — helper scripts: generate KEK, validate env, list models, test connection
+
+---
+
+### api-docs
+
+Official Prem documentation links — quickstart, API keys, billing, errors, rate limits, architecture, and raw REST API reference.
+
+**Triggers on:** Prem docs, quickstart, API keys, billing, rate limits, attestation, security model, prem.io.
+
+---
+
+### reticle
+
+Hardware attestation SDK (`@premai/reticle`) for verifying AMD SEV-SNP, Intel TDX, and NVIDIA GPU enclaves from JavaScript/TypeScript via WebAssembly.
+
+**Triggers on:** `@premai/reticle`, attestation, `ClientBuilder`, `attest()`, SEV-SNP, TDX, NVIDIA attestation.
+
+---
+
+### reticle-expo
+
+React Native / Expo integration for hardware attestation. Implements `@premai/reticle` via a dual-engine architecture (Hermes + QuickJS + bare-wasm3) to work around the missing `WebAssembly` API in React Native.
+
+**Triggers on:** reticle-expo, React Native attestation, Expo attestation, `ReticleWorkletBridge`, `useAttestation`, BareKit worklet.
+
+---
 
 ## Skill Structure
 
 Each skill contains:
 
-- `skill.md` - Instructions for the agent
-- `scripts/` - Helper scripts for automation (optional)
-- `references/` - Supporting documentation (optional)
+- `skill.md` — instructions for the agent
+- `scripts/` — helper scripts for automation (optional)
+- `references/` — supporting documentation (optional)
 
 ## License
 

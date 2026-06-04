@@ -10,8 +10,8 @@ OpenAI-compatible TypeScript SDK with end-to-end encryption via post-quantum cry
 This skill covers: initialization with React caching, streaming chat, vision, audio transcription/translation, live STT with the full Web Audio pipeline, file operations, tools, models, and error handling.
 
 **Load reference files when needed:**
-- `references/api-sdk/references/streaming-patterns.md` — streaming chat/vision/audio and live STT patterns with client caching and teardown
-- `references/api-sdk/references/kek-management.md` — KEK localStorage lifecycle, PIN-based backup/restore
+- `references/streaming-patterns.md` — streaming chat/vision/audio and live STT patterns with client caching and teardown
+- `references/kek-management.md` — KEK localStorage lifecycle, PIN-based backup/restore
 
 ## Installation
 
@@ -507,19 +507,19 @@ import type {
 
 ## Scripts
 
-Runnable helpers in `references/api-sdk/scripts/`:
+Runnable helpers in `scripts/`:
 
 | Script | Description | Run |
 |--------|-------------|-----|
-| `generate-kek.ts` | Generate a new `CLIENT_KEK` and print the hex string + derived KID | `bun references/api-sdk/scripts/generate-kek.ts` |
-| `validate-env.sh` | Check presence and format of all 4 required env vars | `bash references/api-sdk/scripts/validate-env.sh` |
-| `list-models.ts` | Initialise a client and print all available models grouped by type | `bun references/api-sdk/scripts/list-models.ts` |
-| `test-connection.ts` | Verify endpoint URLs and API key with `attest: false` (dev mode) | `bun references/api-sdk/scripts/test-connection.ts` |
+| `generate-kek.ts` | Generate a new `CLIENT_KEK` and print the hex string + derived KID | `bun scripts/generate-kek.ts` |
+| `validate-env.sh` | Check presence and format of all 4 required env vars | `bash scripts/validate-env.sh` |
+| `list-models.ts` | Initialise a client and print all available models grouped by type | `bun scripts/list-models.ts` |
+| `test-connection.ts` | Verify endpoint URLs and API key with `attest: false` (dev mode) | `bun scripts/test-connection.ts` |
 
 ## Reference Files
 
-- `references/api-sdk/references/streaming-patterns.md` — streaming chat/vision/audio and live STT patterns. Load when building chat UI, audio features, or live STT in any framework.
-- `references/api-sdk/references/kek-management.md` — `getCurrentKEK()`, `generateNewKEK()`, PIN-encrypted export/import, localStorage format. Load when managing the KEK lifecycle in a browser app.
+- `references/streaming-patterns.md` — streaming chat/vision/audio and live STT patterns. Load when building chat UI, audio features, or live STT in any framework.
+- `references/kek-management.md` — `getCurrentKEK()`, `generateNewKEK()`, PIN-encrypted export/import, localStorage format. Load when managing the KEK lifecycle in a browser app.
 
 ## Security Boundaries
 
